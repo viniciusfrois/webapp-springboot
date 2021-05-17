@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+	<title>+ Cadastrar Pessoa</title>
+</head>
+
+<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+<body style="background-image: url(img/bg-index2.jpg);">
+
+	<div class="container">
+		<h2>Cadastrar Pessoa</h2>
+		<hr>
+		<form method="POST" action="/insertPessoa" th:object="${pessoa}">
+			<div class="row">
+
+				<div class="col-md-6 form-group offset-md-3">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+					<label class="validation-message" th:errors="*{nome}"></label>
+				</div>
+					<label>Nome:</label>
+					<input id="nome" type="text" required name="nome" class="form-control" placeholder="Ex: Maria Silva" th:field="*{nome}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('cpf')}">
+					<label class="validation-message" th:errors="*{cpf}"></label>
+				</div>
+					<label>CPF:</label>
+					<input id="cpf" type="tel" required name="cpf" class="form-control" placeholder="Ex: 999.999.999-99" th:field="*{cpf}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nascimento')}">
+					<label class="validation-message" th:errors="*{nascimento}"></label>
+				</div>
+					<label>Data de Nascimento:</label>
+					<input id="nascimento" type="date" required name="nascimento" class="form-control" th:field="*{nascimento}">
+				</div>
+			</div>
+
+			<div class="rowbtn">
+				<button type="submit" class="btn btn-success btn-sm">SALVAR</button>
+				&nbsp;
+				<a class="btn btn-danger btn-sm" th:href="@{/}">VOLTAR</a>
+			</div>
+		</form>
+
+	</div>
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Nunito', sans-serif;
+}
+hr {border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0));}
+header {color: white; align-content: center;}
+
+a {cursor: pointer;color: inherit;}
+a.btn-nav:hover{color: #A55EEA;}
+
+body {background-size: cover !important; background-repeat: no-repeat;}
+
+.logo {text-align: center; padding-top: 100px;}
+.botoes {max-width: 1200px; padding:2% 15%; margin: 0 auto; margin-top: 100px;}
+.wm{width: 50%; float: left;}
+.clear {clear: both;}
+.center{text-align: center;}
+.btn {width: 280px; color:black;border-radius: 20px; border: 3px solid #A55EEA;padding: 20px;}
+.btn:hover{color: #CE93D8; background-color: rgba(0, 0, 0, 0.5);}
+.rodape{color: #fff;background-color: #303030; text-align: center; border-top: 1px solid #333; bottom:0;left: 0;height: 25px;position: fixed;width:100%;}
+.rowbtn{margin-top: 50px;color:black;}
+.container{margin-top: 100px; text-align: center;padding-top: 100px; padding-bottom: 100px; background-color: rgba(0, 0, 0, 0.3);
+color: white;}
+.table{color: white;}
+.btn-nav {padding-right: 100px;}

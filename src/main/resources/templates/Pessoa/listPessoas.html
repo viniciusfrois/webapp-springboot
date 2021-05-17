@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+	<title>Desafio Tecnico V.2</title>
+</head>
+<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+<body style="background-image: url(img/bg-index2.jpg);">
+	
+	<div class="container">
+		<h2>Ùtimos Cadastros </h2>
+		<hr>
+		<table class="table table-bordered table-hover">
+		<thead align="middle">
+			<th scope="col">Nome</th>
+			<th scope="col">CPF</th>
+			<th scope="col">Data de Nascimento</th>
+			<th scope="col">Editar/Remover</th>
+		</thead>
+		<tbody align="middle">
+			<tr scope="row" th:each="pessoa : ${listPessoas}">
+				<td th:text = "${pessoa.nome}"></td>
+				<td th:text = "${pessoa.cpf}"></td>
+				<td th:text = "${pessoa.nascimento}"></td>
+				
+				<td>
+				<a class="bt btn-primary btn-sm" th:href="@{alterar/{id}(id=${pessoa.id})}">Editar</a>
+				&nbsp;&nbsp;
+				<a class="bt btn-danger btn-sm" th:href="@{excluir/{id}(id=${pessoa.id})}">Excluir </a>
+				</td>
+			</tr>
+		</tbody>		
+	</div>
+
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
